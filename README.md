@@ -9,7 +9,9 @@ It is recommended to compile VLC in a __clean__ Debian 8 installation, because V
 ### Example
 ```bash
 apt-get update
+apt-get upgrade
 apt-get install wget git libtool build-essential pkg-config autoconf autopoint yasm gettext checkinstall
+cd ~
 wget http://ftp.nl.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-6_all.deb
 dpkg -i automake_1.15-6_all.deb
 wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz
