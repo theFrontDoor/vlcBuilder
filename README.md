@@ -21,7 +21,7 @@ cd cmake-3.2.2
 make
 checkinstall
 cd ~
-git clone https://github.com/videolan/vlc.git
+git clone https://git.videolan.org/git/vlc.git
 cd vlc
 ./bootstrap
 cd contrib
