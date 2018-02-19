@@ -10,7 +10,7 @@ It is recommended to compile VLC in a __clean__ Debian 8 installation, because V
 ```bash
 apt-get update
 apt-get upgrade
-apt-get install wget git libtool build-essential pkg-config autoconf autopoint yasm gettext checkinstall
+apt-get install wget git libtool build-essential pkg-config autoconf autopoint yasm gettext checkinstall flex bison
 cd ~
 wget http://ftp.nl.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-6_all.deb
 dpkg -i automake_1.15-6_all.deb
@@ -21,7 +21,7 @@ cd cmake-3.2.2
 make
 checkinstall
 cd ~
-git clone https://git.videolan.org/git/vlc.git
+git clone https://git.videolan.org/git/vlc/vlc-3.0.git
 cd vlc
 ./bootstrap
 cd contrib
