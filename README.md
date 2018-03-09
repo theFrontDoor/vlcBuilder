@@ -11,8 +11,7 @@ It is recommended to compile VLC in a __clean__ Debian 8 installation, because V
 apt-get update
 apt-get upgrade
 apt-get install wget git libtool build-essential pkg-config autoconf autopoint yasm gettext checkinstall flex bison
-cd ~
-wget http://ftp.nl.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-6_all.deb
+cd ~ && wget http://ftp.nl.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-6_all.deb
 dpkg -i automake_1.15-6_all.deb
 wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz
 tar xf cmake-3.2.2.tar.gz
@@ -20,13 +19,9 @@ cd cmake-3.2.2
 ./configure
 make
 checkinstall
-cd ~
-git clone https://git.videolan.org/git/vlc/vlc-3.0.git
-cd vlc
-./bootstrap
-cd contrib
-mkdir native
-cd native
+cd ~ && git clone https://git.videolan.org/git/vlc/vlc-3.0.git
+cd vlc-3.0 && ./bootstrap
+cd contrib && mkdir native && cd native
 ../bootstrap --enable-shout --enable-dvbpsi --enable-twolame --enable-libmpeg2 --enable-png --enable-x264 --enable-ffmpeg --enable-mad --enable-libarchive --enable-samplerate --enable-libxml2 --enable-gcrypt --enable-gnutls --disable-a52 --disable-aom --disable-aribb24 --disable-aribb25 --disable-asdcplib --disable-ass --disable-bghudappkit --disable-live555 --disable-bluray --disable-bpg --disable-caca --disable-cddb --disable-chromaprint --disable-crystalhd --disable-d3d11 --disable-d3d9 --disable-daala --disable-dca --disable-directx --disable-dshow --disable-dvdcss --disable-dvdnav --disable-dvdread --disable-ebml --disable-faad2 --disable-ffi --disable-flac --disable-fluid --disable-fluidlite --disable-fontconfig --disable-freetype2 --disable-fribidi --disable-gettext --disable-glew --disable-glib --disable-gme --disable-gmp --disable-goom --disable-gpg-error --disable-growl --disable-gsm --disable-harfbuzz --disable-iconv --disable-jack --disable-jpeg --disable-kate --disable-lame --disable-libdsm --disable-libtasn1 --disable-lua --disable-luac --disable-matroska --disable-mfx --disable-microdns --disable-modplug --disable-mpcdec --disable-mpg123 --disable-libplacebo --disable-mysofa --disable-spatialaudio  --disable-ncurses --disable-nettle --disable-nfs --disable-ogg --disable-openjpeg --disable-opus --disable-orc --disable-postproc --disable-projectM --disable-protobuf --disable-pthreads --disable-qt --disable-regex --disable-schroedinger --disable-sdl --disable-SDL_image --disable-sidplay2 --disable-soxr --disable-sparkle --disable-speex --disable-speexdsp --disable-sqlite --disable-ssh2 --disable-taglib --disable-theora --disable-tiff --disable-tiger --disable-tremor --disable-upnp --disable-vncclient --disable-vorbis --disable-vorbisenc --disable-vpx --disable-x265 --disable-xau --disable-xcb --disable-xcb-proto --disable-xorg-macros --disable-xproto --disable-zlib --disable-zvbi
 # Remove --enable-libmp3lame in FFMpeg configure
 nano ../src/ffmpeg/rules.mak
